@@ -22,3 +22,16 @@ class Category(Base):
     description = Column(String)
     subcategory = Column(Integer, ForeignKey('categories.id'))
 
+class Product(Base):
+    __tablename__ = 'products'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String)
+    description = Column(String)
+    category_id = Column(Integer, ForeignKey('categories.id'))
+
+class Attribute(Base):
+    __tablename__ = 'attributes'
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String)
+    value = Column(String)
+    category_id = Column(Integer, ForeignKey('categories.id'))
