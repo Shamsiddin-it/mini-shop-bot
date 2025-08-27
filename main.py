@@ -129,8 +129,6 @@ async def get_cagery_id_for_product(callback: CallbackQuery, state: FSMContext):
 
 
 
-
-
 async def init_db():
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
